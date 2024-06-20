@@ -1,0 +1,8 @@
+# cert files
+*.pem
+*.crt
+*.key
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
