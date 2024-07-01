@@ -13,13 +13,3 @@ resource "vault_policy" "eaas-client" {
   name   = "eaas-client"
   policy = file("policies/eaas-client-policy.hcl")
 }
-
-resource "vault_policy" "system_vault_config" {
-  name   = "system_vault_config"
-  policy = file("policies/system_vault_config.hcl")
-}
-
-resource "vault_policy" "system_jwt_vault_config" {
-  name   = "system_jwt_vault_config"
-  policy = file("policies/system_jwt_vault_config.hcl")
-}

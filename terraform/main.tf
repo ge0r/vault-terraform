@@ -23,8 +23,21 @@ provider "vault" {
   #    - etc.
 }
 
+# JWT auth backend config
 resource "vault_jwt_auth_backend" "jwt" {
   path               = "jwt"
   oidc_discovery_url = "https://gitlab.paesslergmbh.de"
   bound_issuer       = "https://gitlab.paesslergmbh.de"
+}
+
+# JWT role config
+resource "vault_jwt_auth_backend_role" "example-role" {
+  backend         = vault_jwt_auth_backend.jwt.path
+  role_name       = "zz-test-role"
+  role_type       = "jwt"
+  user_claim      = "sub"
+  bound_audiences = []
+  bound_claims = {
+    "project_id" : "1"
+  }
 }
