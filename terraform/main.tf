@@ -20,5 +20,5 @@ provider "vault" {
   #    - VAULT_TOKEN
   #    - VAULT_CACERT
   #    - VAULT_CAPATH
-  #    - etc.  
+  #    - etc.
 }
