@@ -22,3 +22,9 @@ provider "vault" {
   #    - VAULT_CAPATH
   #    - etc.
 }
+
+resource "vault_jwt_auth_backend" "jwt" {
+  path               = "jwt"
+  oidc_discovery_url = "https://gitlab.paesslergmbh.de"
+  bound_issuer       = "https://gitlab.paesslergmbh.de"
+}
