@@ -26,8 +26,8 @@ provider "vault" {
 # JWT auth backend config
 resource "vault_jwt_auth_backend" "jwt" {
   path               = "jwt"
-  oidc_discovery_url = "https://gitlab.paesslergmbh.de"
-  bound_issuer       = "https://gitlab.paesslergmbh.de"
+  oidc_discovery_url = "192.168.80.1"
+  bound_issuer       = "192.168.80.1"
 }
 
 # JWT role config
