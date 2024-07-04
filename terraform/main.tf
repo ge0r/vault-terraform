@@ -24,20 +24,20 @@ provider "vault" {
 }
 
 # JWT auth backend config
-resource "vault_jwt_auth_backend" "jwt" {
-  path               = "jwt"
-  oidc_discovery_url = "http://mygitlab.internal"
-  bound_issuer       = "http://mygitlab.internal"
-}
+# resource "vault_jwt_auth_backend" "jwt" {
+#   path               = "jwt"
+#   oidc_discovery_url = "http://mygitlab.internal"
+#   bound_issuer       = "http://mygitlab.internal"
+# }
 
 # JWT role config
-resource "vault_jwt_auth_backend_role" "example-role" {
-  backend         = vault_jwt_auth_backend.jwt.path
-  role_name       = "zz-test-role"
-  role_type       = "jwt"
-  user_claim      = "sub"
-  bound_audiences = []
-  bound_claims = {
-    "project_id" : "1"
-  }
-}
+# resource "vault_jwt_auth_backend_role" "example-role" {
+#   backend         = vault_jwt_auth_backend.jwt.path
+#   role_name       = "zz-test-role"
+#   role_type       = "jwt"
+#   user_claim      = "sub"
+#   bound_audiences = []
+#   bound_claims = {
+#     "project_id" : "1"
+#   }
+# }
