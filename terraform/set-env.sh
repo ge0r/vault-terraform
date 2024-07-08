@@ -4,3 +4,5 @@
 export VAULT_ADDR="https://localhost:8201/"
 export VAULT_TOKEN="root"
 export VAULT_CACERT="../vault-dev-deploy/server.crt"
+
+# export TF_LOG="DEBUG"
