@@ -38,6 +38,7 @@ resource "vault_jwt_auth_backend_role" "example-role" {
   user_claim      = "sub"
   bound_audiences = ["https://localhost:8201"]
   bound_claims = {
-    "project_id" : "2"
+    "project_id" : "1"
+    "ref_protected" = "true"
   }
 }
