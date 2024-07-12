@@ -8,4 +8,12 @@ module "app_test_pipeline" {
     "kv-v2/data/test"            = ["read"]
     "kv-v2/data/certs/test-cert" = ["read"]
   }
+  BoundClaims = {
+    "kv-v2/data/test" = {
+      "ref" = "main"
+    }
+    "kv-v2/data/certs/test-cert" = {
+      "ref_protected" = "true"
+    }
+  }
 }

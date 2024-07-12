@@ -29,8 +29,3 @@ resource "vault_policy" "GitlabProjectPolicy" {
   name   = local.PolicyName
   policy = data.vault_policy_document.GitlabProjectPolicy.hcl
 }
-
-variable "PolicyMap" {
-  description = "Map of paths to capabilites"
-  type        = map(any)
-}
