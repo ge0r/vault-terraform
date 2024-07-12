@@ -13,8 +13,14 @@ variable "jwt_auth_backend_path" {
   description = "The path of the JWT auth backend"
 }
 
+variable "BoundClaimsIdentifier" {
+  type        = string
+  description = "The name of the targeted environment."
+  default     = ""
+}
+
 locals {
-  commonName           = "${var.GitlabProjectId}-${var.ProjectStage}"
+  commonName           = "${var.GitlabProjectId}-${var.ProjectStage}${var.BoundClaimsIdentifier}"
   approleAuthRoleName  = "tf-app-${local.commonName}"
   jwtAuthRoleName      = "tf-jwt-${local.commonName}"
   PolicyName           = "tf-pol-${local.commonName}"

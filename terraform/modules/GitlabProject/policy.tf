@@ -38,4 +38,5 @@ variable "PolicyMap" {
 variable "BoundClaims" {
   description = "Map of bound claims"
   type        = map(string)
+  default     = {}
 }
