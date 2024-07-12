@@ -21,14 +21,3 @@ locals {
   approleSecretPath    = "tf-${var.GitlabProjectId}"
   kubeconfigSecretPath = "tf-${var.GitlabProjectId}/*"
 }
-
-variable "PolicyMap" {
-  description = "Map of paths to capabilities"
-  type        = map(any)
-}
-
-variable "BoundClaims" {
-  description = "Map of paths to their respective bound claims"
-  type        = map(map(string))
-  default     = {}
-}

@@ -1,6 +1,4 @@
 resource "vault_jwt_auth_backend_role" "jwt" {
-  for_each = var.PolicyMap
-
   backend                 = var.jwt_auth_backend_path
   role_name               = local.jwtAuthRoleName
   token_policies          = [local.PolicyName]
@@ -16,6 +14,6 @@ resource "vault_jwt_auth_backend_role" "jwt" {
     {
       "project_id" : var.GitlabProjectId,
     },
-    lookup(var.BoundClaims, each.key, {})
+    var.BoundClaims
   )
 }
