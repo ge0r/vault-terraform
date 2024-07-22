@@ -20,7 +20,8 @@ variable "BoundClaimsIdentifier" {
 }
 
 locals {
-  commonName           = "${var.GitlabProjectId}-${var.ProjectStage}${var.BoundClaimsIdentifier}"
+  commonNamePostfix    = var.BoundClaimsIdentifier != "" ? "${var.ProjectStage}-${var.BoundClaimsIdentifier}" : var.ProjectStage
+  commonName           = "${var.GitlabProjectId}-${local.commonNamePostfix}"
   approleAuthRoleName  = "tf-app-${local.commonName}"
   jwtAuthRoleName      = "tf-jwt-${local.commonName}"
   PolicyName           = "tf-pol-${local.commonName}"
